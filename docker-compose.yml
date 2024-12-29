@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user123
+      POSTGRES_DB: hackspheredb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - hacksphere-network
+    ports:
+      - "5432:5432"
+
+networks:
+  hacksphere-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
