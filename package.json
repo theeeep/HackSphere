@@ -1,0 +1,15 @@
+{
+	"name": "hacker-news",
+	"scripts": {
+		"dev": "bun run --hot server/index.ts",
+		"format:write": "biome format . --write",
+		"format:check": "biome check . --write"
+	},
+	"dependencies": {
+		"hono": "^4.6.15"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest"
+	}
+}
