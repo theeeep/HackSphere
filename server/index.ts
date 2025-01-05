@@ -4,10 +4,9 @@ import type { ErrorResponse } from "../shared/types";
 
 const app = new Hono();
 
-// app.get("/", (c) => {
-// 	throw new HTTPException(400, { message: "Bad Request" });
-// 	return c.text("Hello Hono!");
-// });
+app.get("/", (c) => {
+	throw new HTTPException(400, { message: "Bad Request" });
+});
 
 app.onError((err, c) => {
 	if (err instanceof HTTPException) {
