@@ -30,7 +30,7 @@ app.onError((err, c) => {
 		{
 			success: false,
 			error:
-				Bun.env.NODE_ENV === "production"
+				process.env.NODE_ENV === "production"
 					? "Internal Server Error"
 					: (err.stack ?? err.message),
 			isFormError:

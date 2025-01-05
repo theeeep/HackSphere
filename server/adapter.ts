@@ -9,7 +9,7 @@ const EnvSchema = z.object({
 });
 
 // here we validate the environment
-const processEnv = EnvSchema.parse(Bun.env);
+const processEnv = EnvSchema.parse(process.env);
 
 // here we connect to the database and create a query client
 const queryClient = postgres(processEnv.DATABASE_URL);
